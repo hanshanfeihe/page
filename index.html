@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>沐浴在阳光下</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                background: #DDD6CC;
+            }
+            a{
+                text-decoration: none;
+            }
+            a:hover{
+                color:#000;
+            }
+            /* 头部 */
+            #header{
+                background-image: url(images/header-bg.jpg);
+                background-repeat: no-repeat;
+                background-position:center 0;
+            }
+           #text{
+               width:1000px;
+               min-width: 144px;
+               padding-top:70px;
+               padding-bottom:25px ;
+               margin: 0 auto 80px 150px;
+           }
+           #text .text5{
+               font-size: 30px;
+               color:white;
+           }
+           #text p{
+               width:330px;
+               font-size: 11px;
+               line-height: 26px;
+               color:white;
+               font-family: '微软雅黑';
+           }
+            /* 导航栏 */
+            #nav{
+                width:100%;
+                background:rgba(56, 134, 72, 0.43);
+                border-bottom: #559765 1px solid;
+                height:50px;
+            }
+            #nav .myul{
+                width:580px;
+                height:50px;
+                margin: 0 auto;
+            }
+            #nav .myul li{
+                float:left;
+                list-style: none;
+                padding:15px;
+                color:white;
+            }
+            #nav .myul li a{
+                text-decoration: none;
+                color:white;
+            }
+            #nav .myul li:hover{
+                background:#58950a;
+                border-radius: 50px 0;
+            }
+            #main-content{
+                width:1000px;
+                overflow: hidden;
+                margin: 20px auto;
+                background: #E8E5DD;
+               
+            }
+            #aside{
+                width:27%;
+                float:left;
+                overflow:hidden;
+                box-shadow:#999 2px 2px 3px;
+            }
+            .myimg{
+                width:160px;
+                height:160px;
+                margin: 20px auto;   
+                border-radius: 50% ;
+                overflow:hidden;
+            }
+            .myimg a{
+                display: block;
+                background-image: url(images/photo.jpg);
+                background-repeat: no-repeat;
+                background-size: 160px 160px;
+                height:160px;
+                width:160px;
+                text-decoration: none;
+                color:white;
+                font-size: 17px;
+                position: relative;
+                cursor: pointer;
+            }
+            .myimg a span{
+                position: absolute;
+                display:block;
+                width:160px;
+                height:63px;
+                background: rgba(0, 0, 0, .5);
+                text-align: center;
+                top:160px;
+                transition: top 0.2s ease-in-out;
+            }
+            .myimg a:hover span{
+                top:97px;
+            }
+            .mytext{
+                color:white;
+                padding:40px 20px;
+                background:#3c7e42;
+            }
+            .userinfo{
+                padding:20px 30px 30px;
+                
+            }
+            .userinfo p{
+                font-size: 14px;
+                line-height: 30px;
+            }
+            .userinfo p a{
+                text-decoration: none;
+                color:green;
+            }
+            .userinfo p a:hover{
+                color:black;
+            }
+            .userinfo .fans{
+                padding:0 10px;
+            }
+            .userinfo .about a{
+                padding: 0 10px;
+                border-right: 1px solid #ccc;
+            }
+            .header{
+                height:30px;
+                line-height: 30px;
+                padding-left: 30px;
+                font-size: 16px;
+                color:white;
+                background:#3c7e42 ;
+            }
+            .newimg .images{
+                padding:20px 30px;
+                overflow: hidden;
+            }
+            .newimg .images a{
+                display: block;
+                width:50px;
+                height:50px;
+                margin-right: 2px;
+                margin-bottom: 2px;
+               float: left;
+            }
+            .newimg .images a img{
+                width:50px;
+                height:50px;
+            }
+            .newimg .images a img:hover{
+                opacity: 0.5;
+            }
+            .taglist .tags{
+                padding:10px;
+            }
+            .taglist .tags a{
+                text-decoration: none;
+                font-display: inline-block;
+                padding: 2px 5px;
+                margin-right: 5px;
+                cursor: pointer;
+                transition: all 0.5s ease;
+                -webkit-transition: all 0.5s ease;
+            }
+            .taglist .tags a:nth-child(9n+0){
+                color:#3F51B5;
+            }
+            .taglist .tags a:nth-child(9n+1){
+                color:#FF9800;
+                font-size:12px;
+            }
+            .taglist .tags a:nth-child(9n+2){
+                color:#9E9E9E;
+                font-size:20px;
+            }
+            .taglist .tags a:nth-child(9n+3){
+                color:#FF5722;
+                font-size: 30px;
+            }
+            .taglist .tags a:nth-child(9n+4){
+                color:#aa2554;
+            }
+            .taglist .tags a:nth-child(9n+5){
+                color:#5e5d5a;
+            }
+            .taglist .tags a:nth-child(9n+6){
+                color:#009688;
+            }
+            .taglist .tags a:nth-child(9n+7){
+                color:#4CAF50;
+            }
+            .taglist .tags a:nth-child(9n+8){
+                color:#9C27B0;
+            }
+            .taglist .tags a:hover{
+                background:#f16e50;
+                color:#fff;
+                border-radius: 5px;
+            }
+            .mymusic{
+                overflow:hidden;
+            }
+            .mymusic .art{
+                margin-top: 10px;
+                width:130px;
+                background-image: url(images/vinyl.png);
+                background-position: left;
+                background-size: 120px;
+                background-repeat: no-repeat;
+                float:left;
+            }
+            .mymusic .art img{
+                width:90px;
+                height:90px;
+                margin-left: 11px;
+                vertical-align: middle;
+            }
+            .mymusic .music-content{
+                margin-top: 10px; 
+            }
+            .mymusic .music-content p{
+                font-size:12px;
+                font:12px "宋体", "Arial Narrow", HELVETICA;
+                line-height: 24px;
+            }
+            .mymusic .music-content p .name{
+                width:12px;
+                height:24px;
+                background-image: url(images/icons.png);
+                /* 偏移像素位置 */
+                background-position:0px -344px;
+                background-repeat: no-repeat;
+                display: block;
+                float:left;
+                margin-right: 7px;
+            }
+            .mymusic .music-content p .artist{
+                width:12px;
+                height:24px;
+                background-image: url(images/icons.png);
+                background-position:-33px -344px;
+                background-repeat: no-repeat;
+                display: block;
+                float:left;
+                margin-right: 7px;
+            }
+            .mymusic .music-content p .album{
+                width:12px;
+                height:24px;
+                background-image: url(images/icons.png);
+                background-position:-16px -344px;
+                background-repeat: no-repeat;
+                display: block;
+                float:left;
+                margin-right: 7px;
+            }
+            .mymusic .music-content p .like{
+                width:12px;
+                height:24px;
+                background-image: url(images/icons.png);
+                background-position:-1px -299px;
+                background-repeat: no-repeat;
+                display: block;
+                float:left;
+                margin-right: 7px;
+            }
+            .mymusic .music{
+                margin-top: 10px;
+            }
+            .mymusic .music audio{
+                width:100%;
+            }
+            .float_img{
+                margin-top: 15px;
+                text-align: center;
+                overflow: hidden;
+            }
+            .float_img .pin{
+                width:37px;
+                height: 37px;
+                margin: 2px auto;
+                background-image: url(images/pin.png);
+            }
+            .float_img .move{
+                margin-top: -28px;
+                animation: yaobai 5s infinite linear;
+                transform-origin: top;
+            }
+            .float_img .move .bg{
+                width:188px;
+                height:182px;
+                position:absolute;
+                top:50px;
+                left:40px;
+            }
+           @keyframes yaobai{
+               0%{
+                   transform: rotate(0deg);
+               }
+               25%{
+                   transform: rotate(-10deg);
+               }
+               50%{
+                   transform: rotate(0deg);
+               }
+               75%{
+                   transform: rotate(10deg);
+               }
+               100%{
+                   transform: rotate(0deg);
+               }
+           }
+           #content{
+               width:73%;
+               overflow:hidden;
+               float:left;
+               background: #fff;
+           }
+           .top,.bottom{
+               background: white;
+               overflow: hidden;
+               border-bottom: 30px solid #F4F3EF;
+               
+           }
+           .title{
+               overflow: hidden;
+               height:28px;
+               line-height: 28px;
+               padding-top: 35px;
+               padding-left: 40px;
+               padding-bottom: 10px;
+               border-bottom: 1px solid #ccc;
+           }
+           .title .bgtitle{
+               width:28px;
+               height:28px;
+               background-image: url(images/titlebg.png);
+               background-repeat: no-repeat;
+               background-size: 28px;
+               float:left;
+               margin-right: 13px;
+           }
+           .title .text{
+               float: left;
+               font-size: 18px;
+               color:#454545;
+               cursor: pointer;
+               transition: padding 0.5s ease;
+           }
+           .title .text:hover{
+               padding-left: 20px;
+           }
+           .content_text{
+               padding-left:40px;
+               padding-top:20px;
+               padding-right: 20px;
+               padding-bottom: 20px;
+               overflow: hidden;
+               border-bottom: 1px solid #ccc;
+           }
+           .content_text p{
+                font-size: 14px;
+               line-height: 25px;
+               text-indent: 2em;
+               margin-bottom: 10px;
+           }
+           .content_text img{
+               vertical-align: middle;
+               border: 0;
+           }
+           .content_text .images{
+               width:480px;
+               height:319px;
+               margin: 10px auto;
+              text-align: center;
+           }
+           .share{
+               padding:20px 60px;
+               font-size: 14px;
+               border-top:1px solid #dddcdb;
+               text-align: right;
+               margin-bottom: 2px;
+               box-shadow:#999 2px 2px 3px;
+           }
+           .share a{
+                color:#a6a6a6;
+                margin-right: 10px;
+           }
+           .share a:hover{
+               color:#000;
+           }
+            .bottom .content_text p{
+               text-align: center;
+           }
+           .fenye{
+               padding: 0px 60px 25px;
+               overflow: hidden;
+               text-align: right;
+               background: #F4F3EF;
+               font-size: 12px;
+           }
+          .fenye  a{
+              display: inline-block;
+              color: #454545;
+              padding:5px 8px;
+              background: white;
+          }
+          .fenye  a:hover{
+              background: #999;
+          }
+        footer{
+            width:100%;
+            border-top:5px solid #1d953f;
+            background: #242221;
+            margin-top: 68px;
+        }
+        footer .hd{
+            width:700px;
+            margin: auto;
+            position: relative;
+            color:#666;
+            border-bottom: 1px solid #ccc;
+        }
+        .hd img{
+            height:138px;
+            position: absolute;
+            top:-58px;
+            left:20px;
+            border: #1d953f 3px solid;
+            display:block;
+        }
+        .hd .footinfo{
+            padding:0 0 0 180px;
+            font-size: 12px;
+            line-height:30px;
+        }
+        .footinfo .fname{
+            font-size: 18px;
+            color:#f16e50;
+        }
+        footer .visitor{
+            width:700px;
+            margin: 2px auto;
+            overflow:hidden;
+        }
+        .visitor h2{
+            color:white;
+            font-size: 14px;
+            font-weight: normal;
+            padding-top: 20px;
+        }
+        .visitor .vimg{
+            width:100%;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .visitor .vimg a{
+            display: inline-block;
+          
+        }
+        .visitor .vimg a img{
+            width:78px;
+            height:78px;
+            border: 2px solid white;
+        }
+        .visitor .vimg a img:hover{
+            opacity: 0.5;
+        }
+        footer .copyright{
+            width:100%;
+            text-align: center;
+            line-height: 30px;
+            color:#959595;
+            font-size: 14px;
+        }
+        </style>
+    </head>
+    <body>
+        <!-- 头部 -->
+        <div id="header">
+            <div id="text">
+                <div class="text5">沐浴在阳光下</div>
+                <p>沐浴阳光，蝉鸣渐止，不思不念，不悔不伤。虔诚祈祷，寒冷不再，淡却过往，从此安好。宁静如初，憧憬如昨。闭目轻嗅，花开不败。时光清宁，光阴流转，与你共眠，岁月温暖。时光长河，愿能若此，度我此生。生死不晓，往事成说，执吾之手，与吾赴老。</p>
+            </div>
+            <!-- 导航 -->
+            <div id="nav">
+                <ul class="myul">
+                    <li><a href="#">关于我</a></li>
+                    <li><a href="#">图片下载</a></li>
+                    <li><a href="#">碎言碎语</a></li>
+                    <li><a href="#">慢生活</a></li>
+                    <li><a href="#">杂货铺</a></li>
+                    <li><a href="#">留言板</a></li>
+                    <li><a href="#">下载</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="main-content">
+            <div id="aside">
+                <div class="myimg">
+                    <a href="#">
+                        <span>沐浴阳光</span>
+                    </a>
+                </div>
+                <div class="mytext">
+                    <p style="line-height:40px;font-size: 16px;">我沐浴阳光,所以我践行。</p>
+                    <p style="font-size:12px;line-height: 1.5;">青春是一个想象的世界，展开自己的思维，尽情沐浴阳光，每当早上站在房顶上，看着新生的太阳从东边泛出暖暖的阳光，它挥洒大地，从不向人类索取什么，只是一味的付出。</p>
+                </div>
+                <div class="userinfo">
+                    <p class="fans">粉丝：<a href="#">167</a></p>
+                    <p class="about">
+                        <a href="#">私信</a>
+                        <a href="#">相册</a>
+                        <a href="#">存档</a>
+                    </p>
+                </div>
+                <!-- 最新照片 -->
+                <div class="newimg">
+                    <div class="header"><p>最新照片</p></div>
+                    <div class="images">
+                        <a href="#"><img src="images/01.jpg" alt=""></a>
+                        <a href="#"><img src="images/02.jpg" alt=""></a>
+                        <a href="#"><img src="images/03.jpg" alt=""></a>
+                        <a href="#"><img src="images/04.jpg" alt=""></a>
+                        <a href="#"><img src="images/05.jpg" alt=""></a>
+                        <a href="#"><img src="images/06.jpg" alt=""></a>
+                        <a href="#"><img src="images/07.jpg" alt=""></a>
+                        <a href="#"><img src="images/08.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="taglist">
+                    <div class="header"><p>全部标签</p></div>
+                    <div class="tags">
+                        <a href="#" title="1个话题">人像</a>
+                        <a href="#" title="7个话题">假如</a>
+                        <a href="#" title="6个话题">可爱</a>
+                        <a href="#" title="4个话题">吊带衫</a>
+                        <a href="#" title="5个话题">唯美</a>
+                        <a href="#" title="9个话题">夏天</a>
+                        <a href="#" title="7个话题">男神</a>
+                        <a href="#" title="1个话题">小清新</a>
+                        <a href="#" title="1个话题">少男</a>
+                        <a href="#" title="1个话题">帽子</a>
+                        <a href="#" title="2个话题">扎辫</a>
+                        <a href="#" title="1个话题">摄影</a>
+                        <a href="#" title="5个话题">散场</a>
+                        <a href="#" title="1个话题">宁静的夏天</a>
+                        <a href="#" title="6个话题">文艺范</a>
+                        <a href="#" title="1个话题">梁静茹</a>
+                        <a href="#" title="8个话题">爱生活</a>
+                        <a href="#" title="4个话题">流年</a>
+                        <a href="#" title="1个话题">清新</a>
+                        <a href="#" title="3个话题">游泳</a>
+                        <a href="#" title="1个话题">沐浴阳光</a>
+                        <a href="#" title="9个话题">白色</a>
+                        <a href="#" title="1个话题">眼睛</a>
+                        <a href="#" title="1个话题">短发</a>
+                        <a href="#" title="4个话题">穿搭</a>
+                        <a href="#" title="1个话题">篮球</a>
+                        <a href="#" title="2个话题">红色</a>
+                        <a href="#" title="6个话题">萌</a>
+                        <a href="#" title="7个话题">运动</a>
+                        <a href="#" title="2个话题">长发</a>
+                        <a href="#" title="1个话题">青春</a>
+                    </div>
+                </div>
+                <div class="mymusic">
+                    <div class="header">我的音乐</div>
+                    <div class="art">
+                        <img src="images/photo.jpg" alt="">
+                    </div>
+                    <div class="music-content">
+                        <p><span class="name"></span>宁夏</p>
+                        <p><span class="artist"></span>歌手：梁静茹</p>
+                        <p><span class="album"></span>专辑：《宁夏》</p>
+                        <p><span class="like"></span>喜欢</p>
+                    </div>
+                    <div class="music">
+                        <audio
+                            src="http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_96604&response=res&type=convert_url&"
+                            controls="controls">Your browser does not support
+                            the audio tag.</audio>
+                    </div>
+                </div>
+                <div class="float_img">
+                    <div class="pin"></div>
+                    <div class="move">
+                        <img src="images/pro_bg.png" alt="">
+                        <img src="images/18.jpg" alt="" class="bg">
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <div class="top">
+                    <div class="title">
+                        <div class="bgtitle"></div>
+                        <div class="text">(转载)唯美的句子：沐浴阳光</div>
+                    </div>
+                    <div class="content_text">
+                        <p>如水月色，万千柔情洒落，一纸素笺，承载起如许的思念。或许，天涯太过遥远，遥远的如叹息声里的怅惘，那么忧伤那么漫长。一缕茶香冉冉飘散，一如你彼时初遇的温柔。琴声一缕，远远传来，是谁的指尖撷起谁的流年，将思念化作零落的音符，坠入梦里声声凝噎?</p>
+                        <p>人生淼淼，岁月无情的将眷恋与温柔，堙没在滚滚红尘里，留下的哀叹，点缀了尘世的阑珊。遗忘在彼岸的轮回，孤独的唱响宿命的悲歌。</p>
+                        <div class="images"><img src="images/0.jpg" alt=""></div>
+                        <p>你端坐闲庭，素手弄弦，琴声悠扬，若高山流水的的前世今生。甩开水袖，将《霓裳羽衣舞》为你跳到极致。君可知?眷眷红尘只因有你，繁华三千我只恋一人，不愿倾国倾城，只为倾尽你心。流年如水，只想牵你之手，一起走向红尘深处，哪怕就此老去，亦不悔。</p>
+                        <p>沐浴阳光，蝉鸣渐止，不思不念，不悔不伤。虔诚祈祷，寒冷不再，淡却过往，从此安好。宁静如初，憧憬如昨。闭目轻嗅，花开不败。时光清宁，光阴流转，与你共眠，岁月温暖。时光长河，愿能若此，度我此生。生死不晓，往事成说，执吾之手，与吾赴老。</p>
+                        <div class="images"><img src="images/1.jpg" alt=""></div>
+                        <p>梦落尘埃，散尽了繁华，漂泊的心灵，依旧悲情。只是那些曾经的梦境，飘零成层层泪影，留在轮廓上的痕迹，再也无法抹去。</p>
+                        <div class="images"><img src="images/3.jpg" alt=""></div>
+                        <p>
+                            落日西下，漫天的红彩挂在云朵之上，那汩汩如弦的流水轻快的迈着步子，没有人会因为日落而落泪，也没有人会因为天色渐黑而伤感;因为天空依旧挂着落夕，挂着云彩，挂着宁静;世间的模样又是一个多姿的曲调，而那些依旧奔息的万物依旧循着踪迹;黎明之后，鸡啼如昔，昨日的生活又开始了新的篇章。</p>
+                    </div>
+                    <div class="share">
+                        <a href="#">阅读全文</a>
+                        <a href="#">评论</a>
+                        <a href="#">转载</a>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="title">
+                        <div class="bgtitle"></div>
+                        <div class="text">梁静茹的《宁夏》 歌词</div>
+                    </div>
+                    <div class="content_text">
+                        <p>宁静的夏天</p>
+                        <p>天空中繁星点点</p>
+                        <p>心里头有些思念</p>
+                        <p>思念着你的脸</p>
+                        <p>我可以假装看不见</p>
+                        <p>也可以偷偷地想念</p>
+                        <p>直到让我摸到你那温暖的脸</p>
+                        <p>宁静的夏天</p>
+                        <p>天空中繁星点点</p>
+                        <p>心里头有些思念</p>
+                        <p>思念着你的脸</p>
+                        <p>我可以假装看不见</p>
+                        <p>也可以偷偷地想念</p>
+                        <p>直到让我摸到你那温暖的脸</p>
+                        <p>知了也睡了</p>
+                        <p>安心的睡了</p>
+                        <p>在我心里面</p>
+                        <p>宁静的夏天</p>
+                        <p>知了也睡了</p>
+                        <p>安心的睡了</p>
+                        <p>在我心里面</p>
+                        <p>宁静的夏天</p>
+                        <p>宁静的夏天&nbsp;&nbsp;天空中繁星点点</p>
+                        <p>心里头有些思念</p>
+                        <p>思念着你的脸</p>
+                        <p>我可以假装看不见</p>
+                        <p>也可以偷偷地想念</p>
+                        <p>直到让我摸到你那温暖的脸</p>
+                        <p>那是个宁静的夏天</p>
+                        <p>你来到宁夏的那一天</p>
+                        <p>Oh oh oh</p>
+                        <p>知了也睡了</p>
+                        <p>安心的睡了</p>
+                        <p>在我心里面</p>
+                        <p>宁静的夏天</p>
+                        <p>知了也睡了</p>
+                        <p>安心的睡了</p>
+                        <p>在我心里面</p>
+                        <p>宁静的夏天</p>
+                        <p style="text-indent: 2em; text-align: left;">《宁夏》唤起每个人最美好无暇的记忆。迷人的嗓音，清新的旋律，让梦继续美好，让纯真岁月一直在。</p>
+                    </div>
+                    <div class="share">
+                        <a href="#">阅读全文</a>
+                        <a href="#">评论</a>
+                        <a href="#">转载</a>
+                    </div>
+                </div>
+                <div class="fenye">
+                    <a href="#" style="background: #58950a;">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">下一页</a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="hd">
+                <img src="images/photo.jpg" alt="头像">
+                <div class="footinfo">
+                    <p class="fname">沐浴阳光</p>
+                    <p>性别：女 年龄：25岁</p>
+                    <p>现居：四川成都</p>
+                    <p style="text-align: right;font-size:16px;">——沐浴阳光,温馨向暖,微笑生活.</p>
+                </div>
+            </div>
+            <div class="visitor">
+                <h2>最近访客 (左邻右舍)</h2>
+                <div class="vimg">
+                    <a href="#"><img src="images/s0.jpg" alt=""></a>
+                    <a href="#"><img src="images/3.jpg" alt=""></a>
+                    <a href="#"><img src="images/text02.jpg" alt=""></a>
+                    <a href="#"><img src="images/s3.jpg" alt=""></a>
+                    <a href="#"><img src="images/s5.jpg" alt=""></a>
+                    <a href="#"><img src="images/s6.jpg" alt=""></a>
+                    <a href="#"><img src="images/s7.jpg" alt=""></a>
+                    <a href="#"><img src="images/08.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>梦已逝，心已碎，留下只是在为离开做准备。...</p>
+                <p>Design by 2016/7/32 星期八 天气晴朗 沐浴在阳光下个人博客模板 模板下载地址：更新中...</p>
+            </div>
+        </footer>
+    </body>
+</html>
